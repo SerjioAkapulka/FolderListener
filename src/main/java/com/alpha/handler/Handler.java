@@ -15,12 +15,15 @@ public abstract class Handler extends Thread {
         this.writer = writer;
     }
 
+    /**
+     * Общий обработчик файла
+     */
     @Override
     public void run() {
         long startTime = System.currentTimeMillis();
         try {
             writer.write("Start handling of the file " + new Date() + "\n");
-            getWordCount(file);
+            getStringCount(file);
             writer.write("Time of working: " + (System.currentTimeMillis() - startTime) + "\n");
             writer.flush();
         } catch (IOException e) {
@@ -28,7 +31,12 @@ public abstract class Handler extends Thread {
         }
     }
 
-    public void getWordCount(File file) throws IOException {
+    /**
+     * Записывает количество строк в файле
+     * @param file файл
+     * @throws IOException
+     */
+    public void getStringCount(File file) throws IOException {
         try (Scanner scanner = new Scanner(file)) {
             int lines = 0;
             while (scanner.hasNextLine()) {

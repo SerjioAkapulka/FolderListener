@@ -11,6 +11,9 @@ public class OtherHandler extends Thread {
         this.writer = writer;
     }
 
+    /**
+     * Удаление файла
+     */
     @Override
     public void run() {
         String text = file.delete() ? "File was deleted + " + "\n" : "File was not deleted" + "\n";

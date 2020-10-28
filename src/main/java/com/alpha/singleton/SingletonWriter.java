@@ -5,6 +5,11 @@ import java.io.*;
 public class SingletonWriter {
     private static BufferedWriter writer;
 
+    /**
+     * Создание и получение writer в случае, если он был создан
+     *
+     * @return writer
+     */
     public static BufferedWriter getWriter() {
         if (writer == null) {
             FileOutputStream fileOutputStream = null;

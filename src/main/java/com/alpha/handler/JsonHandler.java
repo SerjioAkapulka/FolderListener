@@ -4,7 +4,7 @@ import java.io.*;
 
 
 public class JsonHandler extends Handler{
-    public JsonHandler(File file, BufferedWriter writer) throws FileNotFoundException {
+    public JsonHandler(File file, BufferedWriter writer) {
         super(file, writer);
     }
 }

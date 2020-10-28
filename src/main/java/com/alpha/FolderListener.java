@@ -41,11 +41,23 @@ public class FolderListener {
         }
     }
 
+    /**
+     * Вычисляем расширение файла
+     *
+     * @param file файл
+     * @return расширение
+     */
     private static String figureOutExtension(File file) {
         String[] temp = file.getName().split("\\.");
         return temp[temp.length - 1];
     }
 
+    /**
+     * Получение файла по его пути и имени
+     *
+     * @param event событие появления файла в директории
+     * @return файл
+     */
     private static File getFile(WatchEvent event) {
         return new File(folderPath + event.context().toString());
     }

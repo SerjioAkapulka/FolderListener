@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class XmlHandler extends Handler {
-    public XmlHandler(File file, BufferedWriter writer) throws FileNotFoundException {
+    public XmlHandler(File file, BufferedWriter writer) {
         super(file, writer);
     }
 }
